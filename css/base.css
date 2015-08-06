@@ -7219,7 +7219,7 @@ body {
 }
 
 h1, h2, h3, h4, h5{
-  font-family: "Raleway";
+
   font-weight:100;
 }
 
@@ -7247,7 +7247,7 @@ rgb(19, 90, 108) nice dark pale blue
 }
 
 .landing .top-nav{
-  font-family:Raleway;
+
   font-size:80%;
   padding:0.5em;
 }
@@ -7438,7 +7438,7 @@ rgb(19, 90, 108) nice dark pale blue
   color: #fff;
 }
 
-.jumbotron-training { background-image:url(../images/frozen-ridge-top.jpg); } /* TODO replace */
+
 
 
 .subpage2 {
