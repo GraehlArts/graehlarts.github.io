@@ -18,22 +18,46 @@
     information. The application does not have access to your browsing
     activity.
 
-    JSTorrent may securely transmit anonymous usage information about user
-    download statistics to Google Analytics, including:
+    JSTorrent may transmit anonymous usage information about activity
+    within the application. The data is transmitted securely to Google
+    Analytics. The types of data transmitted include:
 
     - Tracking clicks within the app
     - Tracking statistics about completed downloads
-    - Tracking file extensions of completed downloads
+    - Tracking file extensions and approximate file sizes
+      of completed downloads
     - Tracking statistics of number of torrents completed or started
-    - Tracking for unexpected runtime errors to help improve the application
+    - Tracking for unexpected runtime errors to help improve
+      the application
+
+    This data is not shared with any other parties. It is used for the
+    sole purpose of tracking errors and improving the product.
 
     You can opt out of transmitting anonymous usage statistics by
     clicking on the "Settings" menu within the app and unchecking the
     box for "Report usage statistics"
 
-    This data is not shared with any other parties. It is used for the
-    sole purpose of tracking errors and improving the product.
+    <b>Peer to Peer Activity, and Trackers</b>
+    
+    The nature of the BitTorrent protocol means that the application
+    does make peer to peer connections with other hosts on the
+    network.
 
+    Each time you download a torrent, you will be sending the infohash
+    of that torrent to other peers you connect to. You can see which
+    peers and their IP addresses in the "Peers" tab within the
+    application. The infohash uniquely identifies the torrent.
+
+    In addition, you send the infohash of the torrent you download
+    to a list of trackers. You can read more about how BitTorrent
+    traffic sends information to trackers here:
+    http://www.bittorrent.org/beps/bep_0003.html
+
+    If an added torrent does not include any trackers, or does not
+    receive any peers from its trackers, it may automatically add a
+    list of public trackers to that torrent. You can disable this
+    option in the application's Settings.
+    
       </pre>
 
       
