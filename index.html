@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Graehl Arts</title>
+  <meta name="description" content="Graehl Arts is an independent software studio building apps and open-source tools for the web, desktop, and mobile.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700;900&display=swap" rel="stylesheet">
@@ -89,10 +90,19 @@
       margin-bottom: 1rem;
     }
 
+    .hero-eyebrow {
+      margin-bottom: 0.75rem;
+      color: var(--light-blue);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
     .hero p {
       font-size: 1.1rem;
       opacity: 0.9;
-      max-width: 600px;
+      max-width: 680px;
       margin: 0 auto;
     }
 
@@ -106,7 +116,14 @@
       text-align: center;
       font-weight: 300;
       font-size: 1.8rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-intro {
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      text-align: center;
+      color: var(--text-gray);
     }
 
     .product-grid {
@@ -120,6 +137,35 @@
       border-radius: 8px;
       padding: 2rem;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .product-shot {
+      display: block;
+      width: calc(100% + 4rem);
+      margin: -2rem -2rem 1.5rem;
+      overflow: hidden;
+      border-bottom: 1px solid #ddd;
+      background: var(--white);
+    }
+
+    .product-shot img {
+      display: block;
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.25s ease;
+    }
+
+    .product-shot:hover img {
+      transform: scale(1.015);
+    }
+
+    .product-shot-playsvideo img {
+      object-position: center center;
     }
 
     .product-card h3 {
@@ -159,19 +205,86 @@
 
     .product-card p {
       color: var(--text-gray);
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
       font-size: 0.95rem;
+      flex-grow: 1;
     }
 
-    .product-card .cta {
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+    }
+
+    .cta {
       display: inline-block;
       font-weight: 500;
       font-size: 0.9rem;
     }
 
+    .cta-secondary {
+      color: var(--text-gray);
+    }
+
+    /* Labs */
+    .labs {
+      padding: 4rem 0;
+      background: var(--light-gray);
+    }
+
+    .labs h2 {
+      text-align: center;
+      font-weight: 300;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .lab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .lab-card {
+      background: var(--white);
+      border: 1px solid #e4e4e4;
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lab-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .lab-card h3 a {
+      color: var(--dark-charcoal);
+    }
+
+    .lab-card h3 a:hover {
+      color: var(--primary-teal);
+    }
+
+    .lab-card p {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .inline-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
     /* Expertise */
     .expertise {
-      background: var(--light-gray);
+      background: var(--white);
       padding: 3rem 0;
       text-align: center;
     }
@@ -202,7 +315,7 @@
     /* Archive */
     .archive {
       padding: 3rem 0;
-      background: var(--white);
+      background: var(--light-gray);
       border-top: 1px solid #eee;
     }
 
@@ -275,8 +388,12 @@
         grid-template-columns: 1fr;
       }
 
+      .lab-grid {
+        grid-template-columns: 1fr;
+      }
+
       .nav-links a {
-        margin-left: 1rem;
+        margin-left: 0.75rem;
         font-size: 0.8rem;
       }
 
@@ -292,6 +409,7 @@
     <div class="container">
       <div class="brand">Graehl Arts</div>
       <nav class="nav-links">
+        <a href="https://kzahel.github.io">Blog</a>
         <a href="https://github.com/kzahel">GitHub</a>
         <a href="mailto:kyle@graehlarts.com">Contact</a>
       </nav>
@@ -300,41 +418,123 @@
 
   <section class="hero">
     <div class="container">
+      <div class="hero-eyebrow">Independent software studio</div>
       <h1>Software is Art</h1>
-      <p>Building tools with taste and passion. AI orchestration, browser extensions, and native apps.</p>
+      <p>Apps and open-source tools for the web, desktop, and mobile.</p>
     </div>
   </section>
 
   <section class="products">
     <div class="container">
       <h2>Featured Projects</h2>
+      <p class="section-intro">Useful software, built with care and available now.</p>
       <div class="product-grid">
 
         <div class="product-card">
+          <a href="https://jstorrent.com" class="product-shot">
+            <img src="images/featured-jstorrent.png" alt="JSTorrent website and download page">
+          </a>
           <h3>
             <a href="https://jstorrent.com">JSTorrent</a>
-            <span class="badge badge-soon">Launching Soon</span>
+            <span class="badge badge-active">Available</span>
           </h3>
-          <p>BitTorrent client for Chrome and ChromeOS. Download torrents directly in your browser with a modern, pure-JavaScript engine.</p>
-          <a href="https://jstorrent.com" class="cta">Learn more &rarr;</a>
+          <p>A modern BitTorrent client for desktop, Chromium browsers, Android, ChromeOS, and iOS, powered by one shared TypeScript engine.</p>
+          <div class="card-actions">
+            <a href="https://jstorrent.com" class="cta">Get JSTorrent &rarr;</a>
+            <a href="https://github.com/kzahel/JSTorrent" class="cta cta-secondary">Source</a>
+          </div>
         </div>
 
         <div class="product-card">
+          <a href="https://ok200.app" class="product-shot">
+            <img src="images/featured-ok200.png" alt="200 OK Web Server website and download page">
+          </a>
           <h3>
-            <a href="https://forms.gle/88Q5rbZ81sKqXZTt8">Web Server for Chrome</a>
-            <span class="badge badge-soon">Launching Soon</span>
+            <a href="https://ok200.app">200 OK Web Server</a>
+            <span class="badge badge-active">Available</span>
           </h3>
-          <p>Simple HTTP server for Chrome. Perfect for local web development and file sharing. Used by 200,000+ developers.</p>
-          <a href="https://forms.gle/88Q5rbZ81sKqXZTt8" class="cta">Get notified &rarr;</a>
+          <p>The cross-platform successor to Web Server for Chrome, rebuilt by the original author for desktop, Android, and ChromeOS.</p>
+          <div class="card-actions">
+            <a href="https://ok200.app" class="cta">Get 200 OK &rarr;</a>
+            <a href="https://github.com/kzahel/web-server-chrome" class="cta cta-secondary">Source</a>
+          </div>
         </div>
 
         <div class="product-card">
+          <a href="https://playsvideo.com" class="product-shot product-shot-playsvideo">
+            <img src="images/featured-playsvideo.png" alt="PlaysVideo launch page">
+          </a>
+          <h3>
+            <a href="https://playsvideo.com">PlaysVideo</a>
+            <span class="badge badge-active">Available</span>
+          </h3>
+          <p>Play MKV, MP4, AVI, and more in your browser. No install and no upload&mdash;remuxing and transcoding happen locally on your device.</p>
+          <div class="card-actions">
+            <a href="https://playsvideo.com" class="cta">Try PlaysVideo &rarr;</a>
+            <a href="https://github.com/kzahel/playsvideo" class="cta cta-secondary">Source</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <a href="https://yepanywhere.com" class="product-shot">
+            <img src="images/featured-yepanywhere.png" alt="YepAnywhere website showing its agent workspace">
+          </a>
           <h3>
             <a href="https://yepanywhere.com">YepAnywhere</a>
-            <span class="badge badge-active">Active</span>
+            <span class="badge badge-active">Available</span>
           </h3>
-          <p>AI agent orchestration from your phone. Supervise Claude Code sessions, approve tool requests, and manage coding agents from anywhere.</p>
-          <a href="https://yepanywhere.com" class="cta">Try it &rarr;</a>
+          <p>A self-hosted, end-to-end encrypted browser interface for supervising Claude Code and Codex from another computer, tablet, or phone.</p>
+          <div class="card-actions">
+            <a href="https://yepanywhere.com" class="cta">Try YepAnywhere &rarr;</a>
+            <a href="https://github.com/kzahel/yepanywhere" class="cta cta-secondary">Source</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="labs">
+    <div class="container">
+      <h2>Labs &amp; Open Source</h2>
+      <p class="section-intro">Graphics, systems, XR, and tools for making real devices programmable.</p>
+      <div class="lab-grid">
+
+        <div class="lab-card">
+          <h3><a href="https://kzahel.github.io/physbox/">Physbox</a></h3>
+          <p>GPU-resident 2D rigid-body physics and preview-water simulation built with Rust, wgpu, and WebGPU.</p>
+          <div class="card-actions">
+            <a href="https://kzahel.github.io/physbox/" class="cta">Live demo &rarr;</a>
+            <a href="https://github.com/kzahel/physbox" class="cta cta-secondary">Source</a>
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <h3><a href="https://github.com/kzahel/chromeos-testbed">Device Automation Testbeds</a></h3>
+          <p>Agent-friendly automation and recovery tools for ChromeOS, physical iPhones, Meta Quest, and Steam Deck.</p>
+          <div class="inline-links">
+            <a href="https://github.com/kzahel/chromeos-testbed">ChromeOS</a>
+            <a href="https://github.com/kzahel/ios-device-testbed">iOS</a>
+            <a href="https://github.com/kzahel/quest-testbed">Quest</a>
+            <a href="https://github.com/kzahel/steamdeck-testbed">Steam Deck</a>
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <h3><a href="https://kzahel.github.io/spherical-voxel-lab/">Spherical Voxel Lab</a></h3>
+          <p>An interactive experiment in mapping a canonical sphere into moving, Minecraft-like voxel charts.</p>
+          <div class="card-actions">
+            <a href="https://kzahel.github.io/spherical-voxel-lab/" class="cta">Open the lab &rarr;</a>
+            <a href="https://github.com/kzahel/spherical-voxel-lab" class="cta cta-secondary">Source</a>
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <h3><a href="https://github.com/kzahel/wivrn-macos">WiVRn for macOS</a></h3>
+          <p>An experimental native macOS host for streaming desktop OpenXR applications to standalone headsets.</p>
+          <div class="card-actions">
+            <a href="https://github.com/kzahel/wivrn-macos" class="cta">View project &rarr;</a>
+          </div>
         </div>
 
       </div>
@@ -349,6 +549,8 @@
         <span class="tag">Chrome Extensions</span>
         <span class="tag">Android</span>
         <span class="tag">TypeScript</span>
+        <span class="tag">Rust &amp; WebGPU</span>
+        <span class="tag">XR</span>
         <span class="tag">Protocol Engineering</span>
         <span class="tag">Open Source</span>
       </div>
@@ -359,9 +561,10 @@
     <div class="container">
       <h2>Past Projects</h2>
       <ul class="archive-list">
-        <li><a href="https://www.mp4cast.com">MP4Cast</a></li>
         <li><a href="https://github.com/kzahel/WebQuake-Chrome">Web Quake</a></li>
         <li><a href="https://github.com/kzahel/connection-forwarder">Connection Forwarder</a></li>
+        <li><a href="https://github.com/kzahel/jstorrent-legacy-app">JSTorrent Chrome App</a></li>
+        <li><a href="https://github.com/kzahel/web-server-chrome/tree/legacy">Web Server for Chrome</a></li>
       </ul>
     </div>
   </section>
@@ -370,9 +573,10 @@
     <div class="container">
       <div class="footer-links">
         <a href="mailto:kyle@graehlarts.com">kyle@graehlarts.com</a>
+        <a href="https://kzahel.github.io">Blog</a>
         <a href="https://github.com/kzahel">GitHub</a>
       </div>
-      <div class="copyright">&copy; Graehl Arts, 2025</div>
+      <div class="copyright">&copy; Graehl Arts, 2026</div>
     </div>
   </footer>
 
