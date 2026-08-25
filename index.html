@@ -159,11 +159,61 @@
       background: #f4eee3;
     }
 
-    .featured-shot img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    .featured-shot-atpiano {
+      position: relative;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at center, rgba(170, 25, 39, 0.09), transparent 58%),
+        #f4eee3;
+    }
+
+    .atpiano-memory {
+      position: relative;
+      width: clamp(160px, 38%, 220px);
+      aspect-ratio: 1;
+      border: 2px solid #171311;
+      border-radius: 50%;
+      background: #fffdf8;
+      box-shadow: 14px 14px 0 #ecd0cf;
+      transition: transform 0.25s ease;
+    }
+
+    .featured-shot-atpiano:hover .atpiano-memory {
+      transform: translateY(-3px);
+    }
+
+    .atpiano-memory::before,
+    .atpiano-memory::after {
+      position: absolute;
+      border-radius: 50%;
+      content: '';
+    }
+
+    .atpiano-memory::before {
+      inset: 19%;
+      border: 1px solid #aa1927;
+      box-shadow:
+        0 0 0 18px #fffdf8,
+        0 0 0 19px #d7cbc0;
+    }
+
+    .atpiano-memory::after {
+      inset: 46%;
+      background: #aa1927;
+    }
+
+    .atpiano-keys {
+      position: absolute;
+      inset: auto 0 0;
+      height: 16px;
+      border-block: 1px solid #171311;
+      background: repeating-linear-gradient(
+        90deg,
+        #fffdf8 0 48px,
+        #171311 48px 75px,
+        #fffdf8 75px 108px
+      );
     }
 
     .featured-copy {
@@ -589,8 +639,8 @@
         min-height: 0;
       }
 
-      .featured-shot img {
-        height: auto;
+      .featured-shot-atpiano {
+        min-height: 280px;
       }
 
       .featured-copy {
@@ -640,8 +690,9 @@
       <div class="product-grid">
 
         <article class="product-card product-card-featured">
-          <a href="https://at-piano.com" class="featured-shot">
-            <img src="images/featured-atpiano.png" alt="Atpiano, a memory for your piano">
+          <a href="https://at-piano.com" class="featured-shot featured-shot-atpiano" aria-label="Explore Atpiano">
+            <span class="atpiano-memory" aria-hidden="true"></span>
+            <span class="atpiano-keys" aria-hidden="true"></span>
           </a>
           <div class="featured-copy">
             <div class="featured-eyebrow">New from Graehl Arts</div>
