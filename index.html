@@ -238,6 +238,129 @@
       object-position: center center;
     }
 
+    .machine-control-shot {
+      position: relative;
+      display: flex;
+      height: 170px;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      color: #30352e;
+      background-color: #e9e7df;
+      background-image:
+        linear-gradient(rgba(48, 53, 46, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(48, 53, 46, 0.055) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .machine-control-shot:hover {
+      color: #30352e;
+    }
+
+    .machine-control-diagram {
+      display: grid;
+      grid-template-columns: 58px 32px 66px 36px 72px;
+      align-items: center;
+      justify-content: center;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .machine-control-node {
+      display: flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #6e7468;
+      border-radius: 5px;
+      background: #f8f6ef;
+      box-shadow: 3px 3px 0 #b8b5aa;
+    }
+
+    .machine-control-agent::before {
+      width: 6px;
+      height: 6px;
+      margin-right: 6px;
+      border-radius: 50%;
+      background: #71835d;
+      content: '';
+    }
+
+    .machine-control-hub {
+      min-height: 58px;
+      border-color: #30352e;
+      background: #30352e;
+      color: #f8f6ef;
+      box-shadow: 3px 3px 0 #899078;
+      text-align: center;
+    }
+
+    .machine-control-route {
+      position: relative;
+      height: 1px;
+      background: #6e7468;
+    }
+
+    .machine-control-route::after {
+      position: absolute;
+      top: -3px;
+      right: 0;
+      width: 6px;
+      height: 6px;
+      border-top: 1px solid #6e7468;
+      border-right: 1px solid #6e7468;
+      content: '';
+      transform: rotate(45deg);
+    }
+
+    .machine-control-branch {
+      position: relative;
+      height: 98px;
+    }
+
+    .machine-control-branch::before {
+      position: absolute;
+      top: 14px;
+      bottom: 14px;
+      left: 50%;
+      border-left: 1px solid #6e7468;
+      content: '';
+    }
+
+    .machine-control-branch::after {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      left: 0;
+      border-top: 1px solid #6e7468;
+      content: '';
+    }
+
+    .machine-control-targets {
+      display: grid;
+      gap: 8px;
+    }
+
+    .machine-control-target {
+      position: relative;
+      padding: 5px 6px;
+      border: 1px solid #858a80;
+      border-radius: 3px;
+      background: rgba(248, 246, 239, 0.92);
+      text-align: center;
+    }
+
+    .machine-control-target::before {
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      width: 18px;
+      border-top: 1px solid #6e7468;
+      content: '';
+    }
+
     .product-card h3 {
       font-size: 1.4rem;
       font-weight: 700;
@@ -536,8 +659,18 @@
         </article>
 
         <div class="product-card">
-          <a href="https://machinecontrol.dev" class="product-shot">
-            <img src="images/featured-machine-control.png" alt="Machine Control, a cross-platform test lab for coding agents">
+          <a href="https://machinecontrol.dev" class="product-shot machine-control-shot" aria-label="Explore Machine Control">
+            <span class="machine-control-diagram" aria-hidden="true">
+              <span class="machine-control-node machine-control-agent">agent</span>
+              <span class="machine-control-route"></span>
+              <span class="machine-control-node machine-control-hub">control<br>node</span>
+              <span class="machine-control-branch"></span>
+              <span class="machine-control-targets">
+                <span class="machine-control-target">Windows</span>
+                <span class="machine-control-target">macOS</span>
+                <span class="machine-control-target">Linux</span>
+              </span>
+            </span>
           </a>
           <h3>
             <a href="https://machinecontrol.dev">Machine Control</a>
