@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Graehl Arts</title>
-  <meta name="description" content="Graehl Arts is an independent software studio building apps and open-source tools for the web, desktop, and mobile.">
+  <meta name="description" content="Graehl Arts is an independent software studio building thoughtful software for the web, desktop, and mobile.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700;900&amp;display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-teal: rgb(19, 90, 108);
@@ -140,6 +140,76 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+    }
+
+    .product-card-featured {
+      grid-column: 1 / -1;
+      min-height: 350px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      padding: 0;
+      border: 1px solid #2d2522;
+      background: #171311;
+      box-shadow: 0 12px 0 #ecd0cf;
+    }
+
+    .featured-shot {
+      min-height: 350px;
+      overflow: hidden;
+      background: #f4eee3;
+    }
+
+    .featured-shot img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .featured-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem;
+      color: #fffdf8;
+    }
+
+    .featured-eyebrow {
+      margin-bottom: 0.75rem;
+      color: #ff9da3;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .product-card.product-card-featured h3 {
+      margin-bottom: 0.75rem;
+      font-size: 2rem;
+    }
+
+    .product-card.product-card-featured h3 a,
+    .product-card.product-card-featured h3 a:hover {
+      color: #fffdf8;
+    }
+
+    .product-card.product-card-featured p {
+      color: #d5cbc5;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .product-card-featured .cta {
+      color: #ffb1b6;
+    }
+
+    .product-card-featured .cta:hover {
+      color: #fffdf8;
+    }
+
+    .badge-atpiano {
+      background: #aa1927;
+      color: #fff;
     }
 
     .product-shot {
@@ -388,6 +458,22 @@
         grid-template-columns: 1fr;
       }
 
+      .product-card-featured {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-shot {
+        min-height: 0;
+      }
+
+      .featured-shot img {
+        height: auto;
+      }
+
+      .featured-copy {
+        padding: 2rem;
+      }
+
       .lab-grid {
         grid-template-columns: 1fr;
       }
@@ -420,7 +506,7 @@
     <div class="container">
       <div class="hero-eyebrow">Independent software studio</div>
       <h1>Software is Art</h1>
-      <p>Apps and open-source tools for the web, desktop, and mobile.</p>
+      <p>Thoughtful software for the web, desktop, and mobile.</p>
     </div>
   </section>
 
@@ -429,6 +515,25 @@
       <h2>Featured Projects</h2>
       <p class="section-intro">Useful software, built with care and available now.</p>
       <div class="product-grid">
+
+        <article class="product-card product-card-featured">
+          <a href="https://at-piano.com" class="featured-shot">
+            <img src="images/featured-atpiano.png" alt="Atpiano, a memory for your piano">
+          </a>
+          <div class="featured-copy">
+            <div class="featured-eyebrow">New from Graehl Arts</div>
+            <h3>
+              <a href="https://at-piano.com">Atpiano</a>
+              <span class="badge badge-atpiano">Free preview</span>
+            </h3>
+            <p>Turn an acoustic-piano performance into a session you can listen to, see, and revisit. Record or import audio, then follow synchronized notes, a piano roll, keyboard, and optional sheet music.</p>
+            <div class="card-actions">
+              <a href="https://at-piano.com" class="cta">Explore Atpiano &rarr;</a>
+              <a href="https://at-piano.com/download/" class="cta">Download</a>
+              <a href="https://github.com/kzahel/atpiano" class="cta">Source</a>
+            </div>
+          </div>
+        </article>
 
         <div class="product-card">
           <a href="https://jstorrent.com" class="product-shot">
