@@ -307,6 +307,52 @@
       color: #30352e;
     }
 
+    .doc-evidence-shot {
+      align-items: center;
+      background-color: #e1e3dc;
+      background-image:
+        linear-gradient(rgba(23, 33, 38, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 33, 38, 0.07) 1px, transparent 1px);
+      background-size: 18px 18px;
+      display: grid;
+      grid-template-columns: 1fr 42px 1fr;
+      padding: 2rem;
+    }
+
+    .doc-evidence-node {
+      border: 1px solid #172126;
+      background: #fffdf8;
+      box-shadow: 4px 4px 0 #85cdf2;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 1rem 0.65rem;
+      text-align: center;
+    }
+
+    .doc-evidence-node:last-child {
+      background: #135a6c;
+      box-shadow: 4px 4px 0 #d08d3d;
+      color: white;
+    }
+
+    .doc-evidence-route {
+      border-top: 1px solid #172126;
+      position: relative;
+    }
+
+    .doc-evidence-route::after {
+      border-right: 1px solid #172126;
+      border-top: 1px solid #172126;
+      content: '';
+      height: 6px;
+      position: absolute;
+      right: 0;
+      top: -4px;
+      transform: rotate(45deg);
+      width: 6px;
+    }
+
     .machine-control-diagram {
       display: grid;
       grid-template-columns: 58px 32px 66px 36px 72px;
@@ -731,6 +777,23 @@
           <div class="card-actions">
             <a href="https://machinecontrol.dev" class="cta">Explore Machine Control &rarr;</a>
             <a href="https://github.com/kzahel/machine-control" class="cta cta-secondary">Source</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <a href="/doc-evidence/" class="product-shot doc-evidence-shot" aria-label="Explore Doc Evidence">
+            <span class="doc-evidence-node">read-only<br>documents</span>
+            <span class="doc-evidence-route" aria-hidden="true"></span>
+            <span class="doc-evidence-node">local evidence<br>workspace</span>
+          </a>
+          <h3>
+            <a href="/doc-evidence/">Doc Evidence</a>
+            <span class="badge badge-active">Open source</span>
+          </h3>
+          <p>A local-first desktop workspace for inventorying, extracting, searching, and comparing document evidence with source and page provenance intact.</p>
+          <div class="card-actions">
+            <a href="/doc-evidence/" class="cta">Explore Doc Evidence &rarr;</a>
+            <a href="https://github.com/kzahel/doc-evidence" class="cta cta-secondary">Source</a>
           </div>
         </div>
 

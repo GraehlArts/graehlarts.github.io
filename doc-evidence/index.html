@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doc Evidence — Local-first document evidence workspace</title>
+  <meta name="description" content="Inventory, search, extract, and compare document evidence locally while preserving source provenance and human review boundaries.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Doc Evidence">
+  <meta property="og:description" content="A local-first desktop workspace for document inventory, extraction, comparison, and evidence review.">
+  <meta property="og:url" content="https://graehlarts.com/doc-evidence/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Doc Evidence">
+  <meta name="twitter:description" content="A local-first desktop workspace for document evidence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;800&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="studio" href="/">Graehl Arts</a>
+    <nav aria-label="Product navigation">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#downloads">Downloads</a>
+      <a href="https://github.com/kzahel/doc-evidence">Source</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Local-first · open source · source read-only</p>
+        <h1>Turn document collections into inspectable evidence.</h1>
+        <p class="lede">Doc Evidence inventories, extracts, searches, and compares documents on your computer. Every result stays connected to its source file and page, while machine observations remain distinct from reviewed facts.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#downloads">Get Doc Evidence</a>
+          <a class="button button-secondary" href="https://github.com/kzahel/doc-evidence">View source</a>
+        </div>
+      </div>
+      <div class="evidence-map" aria-label="Document evidence flow">
+        <div class="map-source">
+          <span class="map-label">Read-only sources</span>
+          <span class="page page-one"></span>
+          <span class="page page-two"></span>
+          <span class="page page-three"></span>
+        </div>
+        <span class="map-route" aria-hidden="true"></span>
+        <div class="map-library">
+          <span class="map-label">Local library</span>
+          <span>Inventory</span>
+          <span>Extraction</span>
+          <span>Search</span>
+        </div>
+        <span class="map-route" aria-hidden="true"></span>
+        <div class="map-review">
+          <span class="map-label">Evidence view</span>
+          <span class="review-row"></span>
+          <span class="review-row review-row-short"></span>
+          <strong>page 4 · source linked</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="principles" aria-label="Product principles">
+      <article>
+        <span>01</span>
+        <h2>Your documents stay local</h2>
+        <p>The desktop application runs its own authenticated local engine. It does not require hosted document storage, analytics, or a remote-model fallback.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h2>Sources remain untouched</h2>
+        <p>Collections are read-only. Content is identified by SHA-256, paths remain aliases, and generated artifacts live separately from source bytes.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h2>Evidence keeps its context</h2>
+        <p>Extracted text and candidate observations retain file and page provenance. Automated agreement never masquerades as human confirmation.</p>
+      </article>
+    </section>
+
+    <section class="capabilities" id="capabilities">
+      <div class="section-heading">
+        <p class="eyebrow">One durable local library</p>
+        <h2>A workspace for understanding document collections</h2>
+      </div>
+      <div class="capability-grid">
+        <article>
+          <h3>Inventory and deduplicate</h3>
+          <p>Track immutable content across one or more explicitly authorized folders without confusing renamed paths for new evidence.</p>
+        </article>
+        <article>
+          <h3>Extract searchable text</h3>
+          <p>Use bundled Poppler, Tesseract, and OCRmyPDF tools offline, with exact extractor versions and cache identity retained.</p>
+        </article>
+        <article>
+          <h3>Compare representations</h3>
+          <p>Inspect source pages beside native text and OCR output, collapse exact matches, and focus on numeric or textual disagreements.</p>
+        </article>
+        <article>
+          <h3>Run durable jobs</h3>
+          <p>Queue, cancel, retry, and recover extraction work while keeping attempts, warnings, timing, and resulting artifacts inspectable.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="downloads" id="downloads">
+      <div class="download-copy">
+        <p class="eyebrow">Signed desktop builds</p>
+        <h2>Install Doc Evidence</h2>
+        <p id="release-status">The first signed macOS and Windows release is being prepared. Both platforms will be published together after exact installed-artifact validation.</p>
+        <p class="requirements">No system Python, Homebrew, development tools, or internet connection is required after installation.</p>
+        <div class="release-links">
+          <a href="https://github.com/kzahel/doc-evidence/releases">Release notes</a>
+          <a href="https://github.com/kzahel/doc-evidence/blob/main/LICENSE">Apache-2.0 license</a>
+          <a id="checksums-link" href="https://github.com/kzahel/doc-evidence/releases" hidden>SHA-256 checksums</a>
+        </div>
+      </div>
+      <div class="download-options">
+        <article>
+          <span class="platform-mark">macOS</span>
+          <h3>Apple Silicon</h3>
+          <p>macOS 13 or newer · signed, notarized, and stapled DMG</p>
+          <a id="mac-download" class="download-button is-pending" aria-disabled="true">Signed build in preparation</a>
+        </article>
+        <article>
+          <span class="platform-mark">Windows</span>
+          <h3>64-bit PC</h3>
+          <p>Per-user NSIS installer · Authenticode signed</p>
+          <a id="windows-download" class="download-button is-pending" aria-disabled="true">Signed build in preparation</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="open-source">
+      <p class="eyebrow">Built in public</p>
+      <h2>Inspect the contracts, packaging, and provenance model.</h2>
+      <p>Doc Evidence is Apache-2.0 licensed. Its architecture, data contracts, desktop packaging manifests, release validation, and synthetic fixtures are available in the public repository.</p>
+      <a class="text-link" href="https://github.com/kzahel/doc-evidence">Explore the source on GitHub →</a>
+    </section>
+  </main>
+
+  <footer>
+    <a href="/">Graehl Arts</a>
+    <span>Independent software, built with care.</span>
+    <a href="mailto:kyle@graehlarts.com">Contact</a>
+  </footer>
+
+  <script>
+    (async () => {
+      try {
+        const response = await fetch("https://api.github.com/repos/kzahel/doc-evidence/releases/latest", {
+          headers: { Accept: "application/vnd.github+json" }
+        });
+        if (!response.ok) return;
+        const release = await response.json();
+        const assets = Array.isArray(release.assets) ? release.assets : [];
+        const mac = assets.find((asset) => /_\d+\.\d+\.\d+_aarch64\.dmg$/.test(asset.name));
+        const windows = assets.find((asset) => /_\d+\.\d+\.\d+_x64-setup\.exe$/.test(asset.name));
+        const checksums = assets.find((asset) => asset.name === "SHA256SUMS");
+        if (!mac || !windows) return;
+        const version = String(release.tag_name || "").replace(/^desktop-v/, "");
+        const activate = (id, asset, label) => {
+          const link = document.getElementById(id);
+          link.href = asset.browser_download_url;
+          link.textContent = `Download ${label}${version ? ` · v${version}` : ""}`;
+          link.classList.remove("is-pending");
+          link.removeAttribute("aria-disabled");
+        };
+        activate("mac-download", mac, "for macOS");
+        activate("windows-download", windows, "for Windows");
+        document.getElementById("release-status").textContent = `Doc Evidence ${version} is available for both supported platforms. Installer signatures and exact hashes are published with the release.`;
+        if (checksums) {
+          const link = document.getElementById("checksums-link");
+          link.href = checksums.browser_download_url;
+          link.hidden = false;
+        }
+      } catch (_) {
+        // Keep the truthful preparation state when GitHub is unavailable.
+      }
+    })();
+  </script>
+</body>
+</html>
