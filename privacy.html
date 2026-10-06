@@ -1,6 +1,20 @@
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>Privacy Policy</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy Policies - Graehl Arts</title>
+    <style>
+      #yepanywhere {
+        width: min(760px, calc(100vw - 32px));
+        box-sizing: border-box;
+        margin: 32px 0;
+        font-family: system-ui, sans-serif;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+      }
+      #yepanywhere h2 { margin-top: 28px; }
+    </style>
   </head>
   <body>
 
@@ -8,6 +22,66 @@
       The following privacy policies are for applications created by <a href="/">Graehl Arts</a>.
     </p>
 
+
+    <p><a href="#yepanywhere">Yep Anywhere privacy policy</a> · <a href="#yepanywhere-data-deletion">Yep Anywhere account and data deletion</a></p>
+
+    <section id="yepanywhere" aria-labelledby="yepanywhere-title">
+      <h1 id="yepanywhere-title">Yep Anywhere Privacy Policy</h1>
+      <p>Last updated: October 6, 2026</p>
+      <p>Yep Anywhere is published by Graehl Arts. This policy covers the Yep Anywhere Android and iOS apps, desktop app, self-hosted server, and website. Ordinary use connects to your own server without a hosted product account. Your server state and provider sessions stay on the machines you control, except for the network services and separate review demo described below.</p>
+
+      <h2>Network Requests</h2>
+      <p>The application makes minimal network requests:</p>
+      <ul>
+        <li><strong>Yep Anywhere update service</strong> — The app periodically checks <code>updates.yepanywhere.com</code> for version information, and opening Settings → About or using the manual update check triggers a fresh check. These requests include the running app version and an installation identifier so we can maintain relay compatibility, monitor rollout reliability, and support backwards compatibility.</li>
+        <li><strong>Your AI provider</strong> — When you run sessions, requests go directly to your configured AI provider (Anthropic, OpenAI, etc.) using your own API keys.</li>
+        <li><strong>Optional remote-access and browser notification services</strong> — Enabling the public relay or browser push creates the connections needed for those features. They are not required for local use.</li>
+        <li><strong>Native mobile notification registration</strong> — The published Android app registers with Google Firebase Cloud Messaging and the Yep Anywhere push broker when it starts. Registration can happen before you enable notifications for a host. The broker uses Firebase installation identifiers and its own installation and subscription identifiers to route notifications. Native notification data is described below.</li>
+      </ul>
+      <p>We do not send session contents, prompts, or files to the update service. Cloud AI providers receive the content needed to run their agents under their own terms.</p>
+
+      <h2>Local Data Storage</h2>
+      <p>Your self-hosted server stores application data on your machine:</p>
+      <ul>
+        <li>Session transcripts (managed by the Claude SDK in <code>~/.claude/projects/</code>)</li>
+        <li>Server state including logs, uploads, and settings (npm/source: <code>~/.yep-anywhere/</code> on macOS/Linux or <code>%USERPROFILE%\.yep-anywhere\</code> on Windows; desktop app: <code>~/.yep-anywhere-desktop/</code> on macOS or <code>%USERPROFILE%\.yep-anywhere-desktop\</code> on Windows)</li>
+        <li>Push notification VAPID keys (generated locally, no third-party service)</li>
+        <li>Optional password hash if you enable authentication</li>
+      </ul>
+      <p>The mobile apps also store saved host addresses, authentication and resume credentials, device pairing records, and notification bindings on your phone. Android protects saved secrets with the Android Keystore; iOS uses the Keychain. Removing a saved host removes its local profile. This does not delete transcripts or files from the server.</p>
+
+      <h2>Review Demo Server</h2>
+      <p>Graehl Arts operates a separate demo server for app-store evaluation, using fictional projects and a mock AI provider. If you use that supplied demo login, content and activity you enter are processed on our demo server and may remain there until we reset the demo. The supplied account is shared for evaluation, so other reviewers may see changes made with it. Use sample content only. You can contact <a href="mailto:graehlarts@gmail.com">graehlarts@gmail.com</a> about deleting identifiable demo data.</p>
+
+      <h2>Native Mobile Notifications</h2>
+      <p>Android notification delivery uses Google Firebase Cloud Messaging and <code>push.yepanywhere.com</code>, operated by Graehl Arts. The broker stores a delivery identifier, generated installation and subscription identifiers, hashed authorization secrets, and registration and usage timestamps. Google processes Firebase installation identifiers and technical service data, such as IP addresses, to operate its messaging service. See <a href="https://firebase.google.com/support/privacy">Firebase's privacy and security information</a> for Google's processing and retention practices.</p>
+      <p>Notifications for each saved host are optional. When enabled, your server sends a fixed event type, such as approval required or session completed, and opaque session/event identifiers through the broker and Google. These identifiers support notification routing and deduplication. The current native notification service does not accept prompt text, project names, transcript contents, or arbitrary notification titles and bodies. The broker and Google can read this notification metadata; it is separate from the end-to-end encrypted application connection.</p>
+      <p>The broker retains installation registrations and subscription records to support future delivery. Disabling notifications or removing a host attempts to revoke its subscription; an offline phone may need to reconnect to complete server-side revocation. This does not automatically erase the installation registration or Google's records. Notification payloads are not stored as a transcript by the broker. The native apps do not include Firebase Analytics or Crashlytics.</p>
+
+      <h2 id="yepanywhere-data-deletion">Your Choices and Deletion Requests</h2>
+      <p>Yep Anywhere server administrators can create username-and-password accounts on their own server. To request deletion of one of these accounts and its associated data, contact that server's administrator and identify the server and username. Administrators can delete the account in Settings → Users, which removes its login credentials, grants, usage history, and saved drafts and revokes its logins. Session transcripts, uploaded files, and server audit records are separate server data; ask the administrator to remove associated content too. The server administrator controls any remaining retention and backups. Graehl Arts cannot access or erase data on independently operated servers.</p>
+      <p>You control transcripts, files, and settings on your own server. You can remove saved hosts from the mobile app, disable host notifications, and revoke paired devices in your server's settings. Clearing the app's local storage or uninstalling it removes local app data; it does not automatically delete data on your server or in notification services.</p>
+      <p>For privacy questions or a request to delete an identifiable push-broker registration, contact <a href="mailto:graehlarts@gmail.com">graehlarts@gmail.com</a>. We may need the relevant installation or subscription identifier to locate the registration and verify the request. Do not send passwords, authentication secrets, prompts, or private project files. Google controls deletion and retention of data within Firebase under its own terms.</p>
+      <p>For the Graehl Arts review demo, email <a href="mailto:graehlarts@gmail.com?subject=Yep%20Anywhere%20demo%20data%20deletion">graehlarts@gmail.com</a> with the sample session or file identifiers you want removed. We can remove identifiable demo content without deleting the shared evaluation login. The shared login is not a personal account, and we retain its connection configuration so other reviewers can complete their evaluation. Demo content otherwise remains until the demo is reset.</p>
+
+      <h2>End-to-end encrypted public relay</h2>
+      <p>The optional public relay enables remote access without requiring a VPN or port forwarding. If you enable it:</p>
+      <ul>
+        <li>Application messages are end-to-end encrypted; the relay cannot read their contents or your password.</li>
+        <li>The relay can observe connection metadata such as the username, timing, and traffic sizes.</li>
+        <li>The feature is opt-in. You can continue locally, use another direct-access method, or self-host the relay.</li>
+      </ul>
+
+      <h2>Public Session Shares</h2>
+      <p>Public sharing is opt-in because it has a different privacy boundary. No session is shared until you deliberately create a read-only link. Anyone with the secret link can read the shared content until access is revoked or the live share ends, and the current public-share relay path is not private from a relay operator. Review session content before enabling a share.</p>
+
+      <h2>Websites</h2>
+      <p>The public marketing, news, and documentation pages use <a href="https://developers.cloudflare.com/web-analytics/about/">Cloudflare Web Analytics</a> to understand aggregate page traffic and page-load performance. The beacon receives page and referrer information, browser and device categories, approximate geography, and performance measurements. Cloudflare states that Web Analytics does not collect or use visitors' personal data and does not use cookies or local storage for usage metrics.</p>
+      <p>The hosted <code>/remote/</code> application does not include the marketing analytics beacon. Prompts, files, approvals, session contents, and product actions are not sent as marketing analytics events.</p>
+      <p>The Yep Anywhere marketing website also loads Inter from Google Fonts, so viewing those pages makes font requests to Google.</p>
+      <p>Choosing a desktop installer contacts <code>updates.yepanywhere.com</code>, which redirects your browser to the current Stable installer hosted by GitHub. The download link does not add download-counting analytics.</p>
+      <p>Yep Anywhere is open source. You can <a href="https://github.com/kzahel/yepanywhere">inspect the code</a> to verify how the app handles data.</p>
+    </section>
 
     <h1 id="playsvideo">playsvideo Extension Privacy Policy</h1>
 
